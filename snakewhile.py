@@ -26,11 +26,11 @@ while count_init <= count_limit:
         file_num = 'rd'
     else :
         file_num = 'th'
-    print(file_name + '_' + str(count_init) + file_num)
+    print(file_name + '_' + time.strftime("%Y_%m_%d_%H_%M_%S")+ '_' + str(count_init) + file_num)
     os.system('sudo python main.py')
     time.sleep(1)
     dirs = os.listdir(label_path)
     oldName = os.path.join(label_path,file_name)
-    newName = os.path.join(label_path,file_name + '_' + str(count_init) + file_num)
+    newName = os.path.join(label_path,file_name + '_' + time.strftime("%Y_%m_%d_%H_%M_%S")+ '_' + str(count_init) + file_num)
     os.rename(oldName,newName)
     count_init += 1
